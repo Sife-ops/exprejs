@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "node16",
+        // "moduleResolution": "node16",
+        "allowJs": true,
+        "checkJs": true,
+        "allowImportingTsExtensions": true
+        // "types": [
+        //     "vitest/importMeta"
+        // ]
+        // "baseUrl": "./",
+        // "paths": {
+        //     "@db/*": ["db/*"]
+        // },
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}
