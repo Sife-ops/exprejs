@@ -1,3 +1,4 @@
+import ejs from "ejs";
 import express from "express";
 import { fileURLToPath } from "url";
 
@@ -11,11 +12,11 @@ router.get("/about", function(_, res) {
     res.render("about");
 });
 
-router.post("/clicked", function(_, res) {
-    res.send("<div>lol!</div>");
+router.post("/lol", async function(_, res) {
+    res.send(await ejs.renderFile("./hx/lol.ejs"));
 });
 
-function main() {
+async function main() {
     const app = express();
     app.set("view engine", "ejs");
 
