@@ -24,8 +24,9 @@ async function main() {
     const app = express();
     app.set("view engine", "ejs");
 
-    const htmx = fileURLToPath(new URL("./node_modules/htmx.org/dist", import.meta.url));
-    app.use("/htmx", express.static(htmx))
+    app.use(express.static(fileURLToPath(new URL("./node_modules/htmx.org/dist", import.meta.url))));
+    app.use(express.static(fileURLToPath(new URL("./public", import.meta.url))));
+    // console.log(fileURLToPath(new URL("./public", import.meta.url)));
 
     // app.use(express.json());
     app.use("/", router);

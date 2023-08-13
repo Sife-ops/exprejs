@@ -1,14 +1,19 @@
-<%- include("./common") %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./_head") %>
 
-<h1>yeah</h1>
+  <body>
+    <h1>yeah</h1>
 
-<div id="target-div">something</div>
+    <div id="target-div" class="text-red-600">something</div>
 
-<button 
-    hx-post="/lol"
-    hx-trigger="click"
-    hx-target="#target-div"
-    hx-swap="outerHTML"
->
-    lol?
-</button>
+    <button
+      hx-post="/lol"
+      hx-trigger="click"
+      hx-target="#target-div"
+      hx-swap="outerHTML"
+    >
+      lol?
+    </button>
+  </body>
+</html>
