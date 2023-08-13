@@ -7,15 +7,28 @@
         <div class="flex justify-center">
           <div class="text-2xl font-bold">Sign in to Foo</div>
         </div>
+        <div id="sign-in-problem" style="margin: 0"></div>
         <div>
           <div class="font-bold">Email</div>
-          <input class="w-full" />
+          <input name="email" class="w-full" />
         </div>
         <div>
           <div class="font-bold">Password</div>
-          <input class="w-full" />
+          <input name="password" class="w-full" type="password" />
+          <a href="/recover">Forgot password?</a>
         </div>
-        <button>Sign In</button>
+        <button
+          hx-include="[name='email'], [name='password']"
+          hx-post="/sign-in_"
+          hx-target="#sign-in-problem"
+          hx-swap="outerHTML"
+        >
+          <!-- hx-trigger="click" -->
+          Sign In
+        </button>
+        <div class="flex justify-center">
+          <a href="/sign-up">Don't have an account? Sign up</a>
+        </div>
       </div>
     </div>
   </body>

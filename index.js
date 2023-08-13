@@ -28,9 +28,22 @@ router.post("/lol", async function (_, res) {
   );
 });
 
+router.post("/sign-in_", async function (req, res) {
+  const fakeEmail = "email1";
+  const fakePass = "pass1";
+  if (req.body.email !== fakeEmail || req.body.password !== fakePass) {
+    return res.send(await ejs.renderFile("./hx/sign-in-problem.ejs"));
+  }
+  res.setHeader("HX-Redirect", "/about").send("");
+});
+
+// server
 async function main() {
   const app = express();
   app.set("view engine", "ejs");
+
+  //   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
   app.use(
     express.static(
@@ -38,9 +51,7 @@ async function main() {
     )
   );
   app.use(express.static(fileURLToPath(new URL("./public", import.meta.url))));
-  // console.log(fileURLToPath(new URL("./public", import.meta.url)));
 
-  // app.use(express.json());
   app.use("/", router);
   app.listen(3000); // todo: hardcoded
 }
