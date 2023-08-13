@@ -34,7 +34,13 @@ router.post("/sign-in_", async function (req, res) {
   if (req.body.email !== fakeEmail || req.body.password !== fakePass) {
     return res.send(await ejs.renderFile("./hx/sign-in-problem.ejs"));
   }
-  res.setHeader("HX-Redirect", "/about").send("");
+  res
+    .setHeader(
+      "HX-Trigger",
+      '{"save-token": {"token": "todo", "other": "something"}}'
+    )
+    .setHeader("HX-Redirect", "/about")
+    .send("");
 });
 
 // server

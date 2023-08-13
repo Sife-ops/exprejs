@@ -32,4 +32,10 @@
       </div>
     </div>
   </body>
+  <script>
+    document.body.addEventListener("save-token", function (event) {
+      localStorage.setItem("t", event.detail.token);
+      // location.href("/about");
+    });
+  </script>
 </html>
