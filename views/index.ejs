@@ -1,15 +1,13 @@
-<head>
-    <script src="/htmx/htmx.min.js"></script>
-</head>
+<%- include("./common") %>
 
 <h1>yeah</h1>
 
-<div id="parent-div">something</div>
+<div id="target-div">something</div>
 
 <button 
     hx-post="/lol"
     hx-trigger="click"
-    hx-target="#parent-div"
+    hx-target="#target-div"
     hx-swap="outerHTML"
 >
     lol?

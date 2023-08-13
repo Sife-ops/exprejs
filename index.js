@@ -9,11 +9,15 @@ router.get("/", function(_, res) {
 });
 
 router.get("/about", function(_, res) {
-    res.render("about");
+    res.render("about", {
+        location: "ur mom",
+    });
 });
 
 router.post("/lol", async function(_, res) {
-    res.send(await ejs.renderFile("./hx/lol.ejs"));
+    res.send(await ejs.renderFile("./hx/lol.ejs", {
+        message: "xd",
+    }));
 });
 
 async function main() {
