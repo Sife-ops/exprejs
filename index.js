@@ -19,7 +19,24 @@ router.get("/sign-in", function (_, res) {
   res.render("sign-in");
 });
 
+router.get("/temp", function (_, res) {
+  res.render("temp");
+});
+
 // ajax
+router.get("/temp_", function (_, res) {
+    res.send(`
+        <div>
+            <div>swap elem1</div>
+        </div>
+        <div id="elem2" hx-swap-oob="true">
+            <div>
+                <div>swap elem2</div>
+            </div>
+        </div>
+    `);
+});
+
 router.post("/lol", async function (_, res) {
   res.send(
     await ejs.renderFile("./hx/lol.ejs", {
