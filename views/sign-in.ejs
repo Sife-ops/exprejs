@@ -31,11 +31,11 @@
         </div>
       </div>
     </div>
+    <script>
+      document.body.addEventListener("save-token", function (event) {
+        localStorage.setItem("t", event.detail.token);
+        // location.href("/about");
+      });
+    </script>
   </body>
-  <script>
-    document.body.addEventListener("save-token", function (event) {
-      localStorage.setItem("t", event.detail.token);
-      // location.href("/about");
-    });
-  </script>
 </html>

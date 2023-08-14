@@ -76,7 +76,7 @@ async function main() {
   app.use(express.static(fileURLToPath(new URL("./public", import.meta.url))));
 
   app.use("/", router);
-  app.listen(3000); // todo: hardcoded
+  app.listen(3001); // todo: hardcoded
 }
 
 main();
