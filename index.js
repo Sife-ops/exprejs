@@ -24,6 +24,15 @@ router.get("/temp", function(_, res) {
     res.render("temp");
 });
 
+router.get("/temp2", function(_, res) {
+    res.render("page", {
+        pageName: "temp2",
+        options: {
+            foo: "bar",
+        },
+    });
+});
+
 // ajax
 router.get("/temp_", function(_, res) {
     res
